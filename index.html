@@ -13,26 +13,19 @@
 <body>
     <div class="main-ct">
 
-            <video autoplay loop muted plays-inline class="bg-video">
-                <source src="videos/video.mp4" type="video/mp4">
-            </video>
+            <!-- <video autoplay loop muted plays-inline class="bg-video">
+                <source src="videos/bg-video.mp4" type="video/mp4">
+            </video> -->
             
             <div class="swiper main-swiper">
                 <nav class="nav-bar">
                     <a href="#" class="logo">LeAmSa</a>
                     <ul class="nav-items">
-                        <a href="#">
-                            <li>Sobre</li>
-                        </a>
-                        <a href="#">
-                            <li>Skills</li>
-                        </a>
-                        <a href="#">
-                            <li>Projetos</li>
-                        </a>
-                        <a href="#">
-                            <li>Contato</li>
-                        </a>
+                        <li class="current">Home</li>
+                        <li>Sobre</li>
+                        <li>Skills</li>
+                        <li>Portfolio</li>
+                        <li>Contato</li>
                     </ul>
                 </nav>
                 <div class="swiper-wrapper">
@@ -54,21 +47,55 @@
                         </div>
                       </div>
                       <i id="mouse-icon" class="uil uil-mouse-alt"></i>
-                      <span id="mouse-icon-tip">Use o scroll</span>
+                      <!-- <span id="mouse-icon-tip">Use o scroll</span> -->
+                      <span id="mouse-icon-tip"><i class='bx bx-chevrons-down'></i></span>
                   </div>
                   <div class="swiper-slide">
-                    <div class="content">
-                        Conteúdo do slide 2
-                      </div>
+                    <div class="content about">
+                        <div class="about-title-ct">
+                            <h1 class="title">Sobre <span class="stroke">Mim</span></h1>
+                            <div class="image-ct"><img id="about-img" src="img/main-photo.png" alt="Foto"></div>
+                        </div>
+                        <div class="about-info-ct">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem numquam aut, adipisci aliquam molestias nisi necessitatibus, natus tempora dolor, similique dignissimos unde? Ipsa dicta expedita repudiandae provident minus libero cupiditate. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus qui obcaecati minus non magni reprehenderit possimus rerum explicabo libero repellendus vel nam iure beatae doloremque mollitia numquam, distinctio itaque ex.</p>
+                            <h2>Interesses</h2>
+                            <div class="interests-icons-ct">
+                                <div class="interest-icon">
+                                    <i class='bx bx-dumbbell'></i>
+                                </div>
+                                <div class="interest-icon">
+                                    <i class='bx bx-music' ></i>
+                                </div>
+                                <div class="interest-icon">
+                                    <i class='bx bx-football' ></i>
+                                </div>
+                            </div>
+                            <button>Download CV</button>
+                        </div>   
+                    </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="content">
-                        Conteúdo do slide 3
+                    <div class="content skills">
+                        <h1 class="title">Ski<span class="stroke">lls</span></h1>
+                        <div class="skills-icons-ct">
+                            <div class="skill-item">
+                                HTML
+                            </div>
+                            <div class="skill-item">
+                                CSS
+                            </div>
+                            <div class="skill-item">
+                                JS
+                            </div>
+                            <div class="skill-item">
+                                GIT
+                            </div>
+                        </div>
                       </div>
                   </div>
                   <div class="swiper-slide">
                     <div class="content portfolio">
-                        <h1 class="portfolio-title">Port<span class="stroke">folio</span></h1>
+                        <h1 class="title">Port<span class="stroke">folio</span></h1>
                         <div class="projects-grid-ct">
                             <div class="project-item">
                                 <div class="qrcode-ct">
