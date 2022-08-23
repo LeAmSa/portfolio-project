@@ -23,7 +23,9 @@ body {
     /* border: 1px dashed white; */
     width: 100%;
     height: 100vh;
-    background: #1b0000b0;
+    /* background: #1b0000e5; */
+    background: linear-gradient(45deg, #000 0%, #1B0000 47%);
+    /* background: linear-gradient(45deg, rgba(0, 0, 0, 0.699) 0%, #1b0000f3 47%); */
     position: relative;
     /* padding: 0 5%; */
 }
@@ -58,6 +60,18 @@ body {
     display: flex;
     gap: 50px;
     font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-items li {
+    opacity: .4;
+    transition: .4s ease;
+}
+
+.nav-items li.current {
+    opacity: 1;
+    text-shadow: 0px 0px 9px rgba(255, 255, 255, 0.400);
 }
 
 .bg-video {
@@ -158,6 +172,7 @@ body {
 
 #mouse-icon-tip {
     position: absolute;
+    font-size: 1.3em;
     bottom: 12px;
     opacity: 0;
     pointer-events: none;
@@ -203,7 +218,13 @@ body {
     color: var(--white-color);
 }
 
+.logos-ct i {
+    transition: .3s ease;
+}
 
+.logos-ct i:hover {
+    transform: scale(1.1);
+}
 /* ====== home slide animations ====== */
 
 /* logos animation */
@@ -245,6 +266,81 @@ body {
     opacity: 1;
 }
 
+/* ============= ABOUT SLIDE ============== */
+
+.content.about {
+    /* border: 1px dashed white; */
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 50px;
+}
+
+.about-title-ct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-ct {
+    max-width: 400px;
+}
+
+.image-ct #about-img {
+    width: 100%;
+}
+
+.about-info-ct p {
+    margin-bottom: 30px;
+}
+
+.about-info-ct h2 {
+    margin-bottom: 10px;
+}
+
+.interests-icons-ct {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.interest-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.interest-icon i {
+    font-size: 3em;
+}
+
+/* ============= SKILLS SLIDE ============== */
+
+.content.skills {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skills-icons-ct {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
 /* ============= PORTFOLIO SLIDE ============== */
 
 .content.portfolio {
@@ -262,7 +358,7 @@ body {
     padding-bottom: 10px;
 }
 
-.portfolio-title {
+.title {
     text-transform: uppercase;
     font-size: 4em;
 }
@@ -376,7 +472,7 @@ body {
     color: var(--bg);
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 45%;
     font-size: 2em;
     cursor: pointer;
 }
