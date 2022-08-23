@@ -1,4 +1,5 @@
 var swiper = new Swiper(".main-swiper", {
+    speed: 600,
     direction: "vertical",
     slidesPerView: 1,
     spaceBetween: 0,
@@ -8,3 +9,15 @@ var swiper = new Swiper(".main-swiper", {
       clickable: true,
     },
   });
+
+//Nav item go to associated slide and change nav item class
+const navItems = document.getElementsByTagName('li');
+
+for (let i = 0; i < navItems.length; i++) {
+  navItems[i].addEventListener('click', function() {
+    swiper.slideTo(i);
+    var current = document.getElementsByClassName("current");
+    current[0].className = current[0].className.replace("current", "");
+    this.className += "current";
+  });
+}
