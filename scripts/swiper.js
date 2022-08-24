@@ -21,3 +21,8 @@ for (let i = 0; i < navItems.length; i++) {
     this.className += "current";
   });
 }
+
+// associating nav item with the slide active on scroll or bullet click
+swiper.on('slideChange', function () {
+  navItems[swiper.activeIndex].click()
+});
