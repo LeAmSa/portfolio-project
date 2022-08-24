@@ -23,10 +23,34 @@ body {
     /* border: 1px dashed white; */
     width: 100%;
     height: 100vh;
-    background: linear-gradient(45deg, #000 0%, #1B0000 47%);
+    background-image: linear-gradient(45deg, #000 0%, #1B0000 47%);
+    /* background-image: linear-gradient(45deg, rgb(230, 40, 214) 0%, #1B0000 47%); */
+    background-size: 100% 200%;
+    background-position-y: 0%;
     /* background: linear-gradient(45deg, rgba(0, 0, 0, 0.699) 0%, #1b0000f3 47%); */
     position: relative;
+    transition: 1.5s ease;
+    transition-property: background-position;
 }
+
+/* ============= background gradient transitions =============== */
+
+.main-ct.slide2 {
+    background-position-y: 25%;
+}
+
+.main-ct.slide3 {
+    background-position-y: 50%;
+}
+
+.main-ct.slide4 {
+    background-position-y: 75%;
+}
+
+.main-ct.slide5 {
+    background-position-y: 100%;
+}
+
 
 .nav-bar {
     /* border: 1px dashed yellow; */
@@ -165,7 +189,8 @@ body {
     position: absolute;
     bottom: 12px;
     font-size: 2.5em;
-    transition: .4s ease-out;
+    transition: transform .4s ease-out, opacity .7s ease 3.5s;
+    opacity: 0;
 }
 
 #mouse-icon-tip {
@@ -174,7 +199,7 @@ body {
     bottom: 12px;
     opacity: 0;
     pointer-events: none;
-    transition: .4s ease;
+    transition: .3s ease;
 }
 
 #mouse-icon:hover {
@@ -194,14 +219,31 @@ body {
 
 .image-ct #main-img {
     width: 100%;
+    opacity: 0;
+    transition: opacity 6s ease;
 }
 
 .text-ct h1{
     font-size: 3em;
+    transform: translateY(-60px);
+    opacity: 0;
+    transition: 2s ease;
+    transition-property: transform, opacity;
 }
 
 .text-ct h3 {
     margin-bottom: 15px;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 2s ease;
+    transition-property: transform, opacity;
+}
+
+.text-ct p {
+    transform: translateY(60px);
+    opacity: 0;
+    transition: 2s ease;
+    transition-property: transform, opacity;
 }
 
 .logos-ct {
@@ -223,6 +265,7 @@ body {
 .logos-ct i:hover {
     transform: scale(1.1);
 }
+
 /* ====== home slide animations ====== */
 
 /* logos animation */
@@ -230,21 +273,29 @@ body {
     transform: translateX(-60px);
     opacity: 0;
     transition: 1.5s ease;
+    transition-property: transform, opacity;
+    transition-delay: 1.2s;
 }
 .logos-ct a:nth-child(2) {
     transform: translateX(-90px);
     opacity: 0;
     transition: 1.7s ease;
+    transition-property: transform, opacity;
+    transition-delay: 1.2s;
 }
 .logos-ct a:nth-child(3) {
     transform: translateX(-120px);
     opacity: 0;
     transition: 1.9s ease;
+    transition-property: transform, opacity;
+    transition-delay: 1.2s;
 }
 .logos-ct a:nth-child(4) {
     transform: translateX(-150px);
     opacity: 0;
     transition: 2.1s ease;
+    transition-property: transform, opacity;
+    transition-delay: 1.2s;
 }
 
 .swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(1) {
@@ -261,6 +312,29 @@ body {
 }
 .swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(4) {
     transform: translateX(0);
+    opacity: 1;
+}
+
+.swiper.main-swiper .swiper-slide-active .text-ct h1 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.swiper.main-swiper .swiper-slide-active .text-ct h3 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.swiper.main-swiper .swiper-slide-active .text-ct p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.swiper.main-swiper .swiper-slide-active .image-ct #main-img {
+    opacity: 1;
+}
+
+.swiper.main-swiper .swiper-slide-active #mouse-icon {
     opacity: 1;
 }
 
@@ -370,7 +444,7 @@ body {
 
 .title {
     text-transform: uppercase;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .stroke {
@@ -513,3 +587,69 @@ body {
     scrollbar-color: #8f1a1a #2c0404;
 }
 
+/* ============= TOUCH SLIDE ============== */
+
+.content.touch {
+    flex-direction: column;
+}
+
+.content.touch h1 {
+    margin: 25px 0;
+}
+
+.touch-info-ct {
+    /* border: 1px dashed white; */
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 100px;
+    font-weight: 300;
+}
+
+.touch-info-ct #touch-img {
+    width: 100%;
+}
+
+.emails-ct {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.emails-ct i {
+    font-size: 2em;
+    margin-right: 8px;
+    padding-right: 8px;
+    border-right: 1px solid lightgray;
+}
+
+.socials {
+    list-style: none;
+}
+
+.socials-item a {
+    display: flex;
+    align-items: center;
+}
+
+.socials-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.socials-item i {
+    font-size: 1.4em;
+}
+
+.socials-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.37);
+    font-size: 14px;
+}
