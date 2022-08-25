@@ -5,6 +5,7 @@
     --bg: #1B0000;
     --white-color: #ffffff;
     --red-color: #8D0B0B;
+    --gray-color: #ddd6d6;
 }
 
 * {
@@ -332,6 +333,7 @@ body {
 
 .swiper.main-swiper .swiper-slide-active .image-ct #main-img {
     opacity: 1;
+    transition-delay: .8s;
 }
 
 .swiper.main-swiper .swiper-slide-active #mouse-icon {
@@ -361,18 +363,22 @@ body {
     width: 100%;
 }
 
-.about-info-ct p {
-    margin-bottom: 30px;
+.interests-ct {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.about-info-ct h2 {
-    margin-bottom: 10px;
+.about-info-ct {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .interests-icons-ct {
     display: flex;
     gap: 15px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .interest-icon {
@@ -387,6 +393,11 @@ body {
 
 .interest-icon i {
     font-size: 3em;
+}
+
+#btn-download-cv {
+    width: 130px;
+    padding: 5px;
 }
 
 /* ============= SKILLS SLIDE ============== */
@@ -587,17 +598,17 @@ body {
     scrollbar-color: #8f1a1a #2c0404;
 }
 
-/* ============= TOUCH SLIDE ============== */
+/* ============= contact SLIDE ============== */
 
-.content.touch {
+.content.contact {
     flex-direction: column;
 }
 
-.content.touch h1 {
+.content.contact h1 {
     margin: 25px 0;
 }
 
-.touch-info-ct {
+.contact-info-ct {
     /* border: 1px dashed white; */
     display: grid;
     grid-auto-flow: column;
@@ -606,22 +617,28 @@ body {
     font-weight: 300;
 }
 
-.touch-info-ct #touch-img {
+.contact-info-ct #contact-img {
     width: 100%;
 }
 
 .emails-ct {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .emails-ct i {
-    font-size: 2em;
-    margin-right: 8px;
+    font-size: 1.4em;
     padding-right: 8px;
-    border-right: 1px solid lightgray;
+    color: var(--gray-color);
 }
+
+.emails-links {
+    border-left: 1px solid var(--gray-color);
+    padding-left: 8px;
+    color: var(--gray-color);
+}
+
 
 .socials {
     list-style: none;
@@ -638,11 +655,14 @@ body {
 
 .socials-item i {
     font-size: 1.4em;
+    color: var(--gray-color);
+
 }
 
 .socials-item a {
     text-decoration: none;
-    color: #fff;
+    color: var(--gray-color);
+
 }
 
 .location {
@@ -650,6 +670,5 @@ body {
     align-items: center;
     gap: 8px;
     margin-top: 10px;
-    color: rgba(255, 255, 255, 0.37);
-    font-size: 14px;
+    color: var(--gray-color);
 }
