@@ -6,6 +6,8 @@
     --white-color: #ffffff;
     --red-color: #8D0B0B;
     --gray-color: #ddd6d6;
+    --purple-color: #5a044c;
+    --text-shadow: #ffffff66;
 }
 
 * {
@@ -13,6 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Work Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -63,7 +66,7 @@ body {
     padding: 15px 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .logo {
@@ -83,18 +86,33 @@ body {
     display: flex;
     gap: 50px;
     font-weight: 600;
+    font-size: 18px;
     color: #fff;
     cursor: pointer;
 }
 
+
 .nav-items li {
-    opacity: .4;
+    opacity: .3;
     transition: .4s ease;
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
 
 .nav-items li.current {
     opacity: 1;
-    text-shadow: 0px 0px 9px rgba(255, 255, 255, 0.400);
+    text-shadow: 0px 0px 9px var(--text-shadow);
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.stroke {
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
 }
 
 .bg-video {
@@ -264,7 +282,8 @@ body {
 }
 
 .logos-ct i:hover {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    text-shadow: 0px 0px 9px rgba(255, 255, 255, 0.400);
 }
 
 /* ====== home slide animations ====== */
@@ -277,6 +296,7 @@ body {
     transition-property: transform, opacity;
     transition-delay: 1.2s;
 }
+
 .logos-ct a:nth-child(2) {
     transform: translateX(-90px);
     opacity: 0;
@@ -284,6 +304,7 @@ body {
     transition-property: transform, opacity;
     transition-delay: 1.2s;
 }
+
 .logos-ct a:nth-child(3) {
     transform: translateX(-120px);
     opacity: 0;
@@ -291,6 +312,7 @@ body {
     transition-property: transform, opacity;
     transition-delay: 1.2s;
 }
+
 .logos-ct a:nth-child(4) {
     transform: translateX(-150px);
     opacity: 0;
@@ -299,35 +321,23 @@ body {
     transition-delay: 1.2s;
 }
 
-.swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(1) {
-    transform: translateX(0);
-    opacity: 1;
-}
-.swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(2) {
-    transform: translateX(0);
-    opacity: 1;
-}
-.swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(3) {
-    transform: translateX(0);
-    opacity: 1;
-}
+.swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(1),
+.swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(2),
+.swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(3),
 .swiper.main-swiper .swiper-slide-active .logos-ct a:nth-child(4) {
     transform: translateX(0);
     opacity: 1;
 }
 
-.swiper.main-swiper .swiper-slide-active .text-ct h1 {
+
+.swiper.main-swiper .swiper-slide-active .text-ct h1,
+.swiper.main-swiper .swiper-slide-active .text-ct p {
     transform: translateY(0);
     opacity: 1;
 }
 
 .swiper.main-swiper .swiper-slide-active .text-ct h3 {
     transform: translateX(0);
-    opacity: 1;
-}
-
-.swiper.main-swiper .swiper-slide-active .text-ct p {
-    transform: translateY(0);
     opacity: 1;
 }
 
@@ -378,7 +388,6 @@ body {
 .interests-icons-ct {
     display: flex;
     gap: 15px;
-    /* margin-bottom: 50px; */
 }
 
 .interest-icon {
@@ -387,8 +396,20 @@ body {
     align-items: center;
     width: 100px;
     height: 100px;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     border-radius: 10px;
+    position: relative;
+    background: var(--bg);
+}
+
+.interest-icon::before {
+    content: '';
+    position: absolute;
+    width: 102%;
+    height: 102%;
+    background: linear-gradient(45deg, #fff, var(--purple-color));
+    z-index: -1;
+    border-radius: inherit;
 }
 
 .interest-icon i {
@@ -396,8 +417,33 @@ body {
 }
 
 #btn-download-cv {
-    width: 130px;
-    padding: 5px;
+    width: 160px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--white-color);
+    background: var(--bg);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+}
+
+#btn-download-cv::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, #fff, var(--purple-color));
+    width: 101%;
+    height: 109%;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+#btn-download-cv i {
+    font-size: 1.2em;
 }
 
 /* ============= SKILLS SLIDE ============== */
@@ -426,13 +472,13 @@ body {
     background: var(--bg);
 }
 
-.skill-item::after {
+.skill-item::before {
     content: '';
     position: absolute;
-    background: linear-gradient(45deg, #fff, rgb(90, 4, 76));
+    background: linear-gradient(45deg, #fff, var(--purple-color));
     width: 102%;
     height: 102%;
-    border-radius: 50%;
+    border-radius: inherit;
     z-index: -1;
 }
 
@@ -452,21 +498,6 @@ body {
     max-width: 610px;
     padding-bottom: 10px;
 }
-
-.title {
-    text-transform: uppercase;
-    font-size: 3em;
-}
-
-.stroke {
-    -webkit-text-stroke: 1px #fff;
-    color: transparent;
-}
-
-/* .content h1:hover {
-    -webkit-text-stroke: 1px #fff;
-    color: transparent;
-} */
 
 .project-item {
     /* border: 1px dashed white; */
@@ -598,7 +629,7 @@ body {
     scrollbar-color: #8f1a1a #2c0404;
 }
 
-/* ============= contact SLIDE ============== */
+/* ============= CONTACT SLIDE ============== */
 
 .content.contact {
     flex-direction: column;
@@ -671,4 +702,160 @@ body {
     gap: 8px;
     margin-top: 10px;
     color: var(--gray-color);
+}
+
+/* ==================== RESPONSIVE STYLES ==================== */
+
+@media screen and (max-width: 768px) {
+
+    /* ====== NAV MENU ====== */
+    .nav-text {
+        display: none;
+    }
+
+    .nav-items {
+        font-size: 26px;
+        gap: 30px;
+    }
+
+    /* ====== HOME SLIDE ====== */
+
+    .content.home {
+        overflow: hidden;
+        position: relative;
+        display: grid;
+    }
+
+    .content.home .image-ct {
+        grid-row: 1;
+        z-index: -1;
+    }
+
+    .text-ct {
+        position: absolute;
+        padding: 0 20px;
+        top: 50%;
+    }
+
+    .logos-ct {
+        padding-bottom: 10px;
+        grid-row: 3;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        gap: 0;
+    }
+
+    #mouse-icon, 
+    #mouse-icon-tip {
+        display: none;
+    }
+    
+    /* ====== home slide animations ====== */
+
+    .logos-ct a:nth-child(1) {
+        transform: translateY(60px);
+    }
+
+    .logos-ct a:nth-child(2) {
+        transform: translateY(90px);
+    }
+
+    .logos-ct a:nth-child(3) {
+        transform: translateY(120px);
+    }
+
+    .logos-ct a:nth-child(4) {
+        transform: translateY(150px);
+    }
+
+    /* ====== ABOUT SLIDE ====== */
+
+    .content.about {
+        grid-auto-flow: row;
+    }
+
+    .content.about .image-ct {
+        display: none;
+    }
+
+    .about-info-ct {
+        align-items: center;
+    }
+
+    .interests-ct {
+        align-items: center;
+    }
+
+    /* ====== PORTFOLIO SLIDE ====== */
+
+    .content.portfolio {
+        flex-direction: column;
+    }
+
+    .projects-grid-ct {
+        max-width: 300px;
+    }
+
+    /* ====== CONTACT SLIDE ====== */
+
+    .contact-info-ct {
+        column-gap: 50px;
+        padding: 0 30px;
+    }   
+}
+
+@media screen and (max-width: 425px) {
+
+    .title{
+        font-size: 2em;
+    }
+
+    /* ====== SKILLS SLIDE ====== */
+
+    .skills-icons-ct {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: row;
+        row-gap: 20px;
+    }
+
+    /* ====== CONTACT SLIDE ====== */
+
+    .content.contact {
+        /* border: 1px dashed white; */
+        position: relative;
+        justify-content: flex-start;
+    }
+    
+    .content.contact .image-ct {
+        position: absolute;
+        z-index: -1;
+        left: -5%;
+        bottom: 0;
+    }
+
+    .contact-info-ct {
+        column-gap: 0;
+    }
+
+    .content.contact h1 {
+        margin: 25px 0 70px 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    
+    /* ====== HOME SLIDE ====== */
+
+    .text-ct {
+        top: 45%;
+    }
+
+    /* ====== CONTACT SLIDE ====== */
+
+    .content.contact h1 {
+        margin: 25px 0 70px 0;
+    }
 }
