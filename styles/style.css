@@ -80,7 +80,7 @@ body {
     display: flex;
     gap: 50px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     cursor: pointer;
 }
@@ -642,8 +642,12 @@ body {
     font-weight: 300;
 }
 
-.contact-info-ct #contact-img {
+.contact-info-ct .contact-img {
     width: 100%;
+}
+
+.contact-info-ct img:nth-child(2) {
+    display: none;
 }
 
 .emails-ct {
@@ -896,8 +900,16 @@ body {
         position: absolute;
         z-index: -1;
         left: -5%;
-        bottom: 0;
-        opacity: .1;
+        bottom: 10px;
+        opacity: .2;
+    }
+
+    .contact-info-ct img:nth-child(1) {
+        display: none;
+    }
+
+    .contact-info-ct img:nth-child(2) {
+        display: block;
     }
 
     .contact-info-ct {
