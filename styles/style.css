@@ -69,12 +69,6 @@ body {
     justify-content: center;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
 .nav-bar a {
     text-decoration: none;
     color: #fff;
@@ -810,6 +804,33 @@ body {
 @media screen and (max-width: 425px) {
 
     .title{
+        font-size: 2em;
+    }
+
+    /* ====== HOME SLIDE ====== */
+
+    #my-name {
+        font-size: 2em;
+    }
+
+    .content.home h3 {
+        font-size: 1em;
+    }
+
+    /* ====== ABOUT SLIDE ====== */
+
+    .about-info-ct {
+        height: 100%;
+        gap: 0;
+        justify-content: space-around;
+    }
+
+    .interest-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .interest-icon i {
         font-size: 2em;
     }
 
