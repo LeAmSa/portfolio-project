@@ -704,7 +704,7 @@ body {
 
     /* ====== NAV MENU ====== */
     .nav-text {
-        display: none;
+        font-size: 10px;
     }
 
     .nav-items {
@@ -712,17 +712,30 @@ body {
         gap: 30px;
     }
 
+    .nav-items li {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title{
+        display: none;
+    }
+
+
     /* ====== HOME SLIDE ====== */
 
     .content.home {
+        /* border: 1px dashed; */
         overflow: hidden;
         position: relative;
-        display: grid;
+        flex-direction: column;
+        
     }
 
     .content.home .image-ct {
-        grid-row: 1;
+        /* border: 1px dashed; */
         z-index: -1;
+        order: 1;
     }
 
     .text-ct {
@@ -732,14 +745,16 @@ body {
     }
 
     .logos-ct {
+        /* border: 1px dashed; */
         padding-bottom: 10px;
-        grid-row: 3;
+        margin-right: 0;
         width: 100%;
         height: 100%;
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-end;
         gap: 0;
+        order: 2;
     }
 
     #mouse-icon, 
@@ -803,10 +818,6 @@ body {
 
 @media screen and (max-width: 425px) {
 
-    .title{
-        font-size: 2em;
-    }
-
     /* ====== HOME SLIDE ====== */
 
     #my-name {
@@ -820,9 +831,11 @@ body {
     /* ====== ABOUT SLIDE ====== */
 
     .about-info-ct {
+        grid-row: 1 / 3;
+        padding-top: 30px;
         height: 100%;
         gap: 0;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .interest-icon {
@@ -842,12 +855,22 @@ body {
         row-gap: 20px;
     }
 
+    /* ====== PORTFOLIO SLIDE ====== */    
+    
+    .projects-grid-ct {
+        max-width: 250px;
+    }
+
+    .project-item {
+        min-width: 250px;
+    }
+
     /* ====== CONTACT SLIDE ====== */
 
     .content.contact {
         /* border: 1px dashed white; */
         position: relative;
-        justify-content: flex-start;
+        justify-content: center;
     }
     
     .content.contact .image-ct {
@@ -855,6 +878,7 @@ body {
         z-index: -1;
         left: -5%;
         bottom: 0;
+        opacity: .1;
     }
 
     .contact-info-ct {
