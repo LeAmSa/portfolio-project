@@ -842,6 +842,11 @@ body {
         font-size: 1em;
     }
 
+    .content.home .image-ct {
+        position: absolute;
+        top: 60px;
+    }
+
     /* ====== ABOUT SLIDE ====== */
 
     .about-info-ct {
