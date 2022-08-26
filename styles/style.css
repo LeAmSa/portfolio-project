@@ -138,7 +138,7 @@ body {
 /* ============= Main Swiper ============== */
 
 .swiper.main-swiper {
-    /* border: 1px dashed black; */
+    /* border: 1px dashed white; */
     max-width: 1300px;
     height: 100%;
 }
@@ -702,7 +702,25 @@ body {
 
 @media screen and (max-width: 768px) {
 
+    /* ============= Main Swiper ============== */
+
+    .swiper.main-swiper {
+        position: relative;
+    }
+
+    .swiper.main-swiper .swiper-slide {
+        padding: 15px 25px 50px 25px;
+    }
+
     /* ====== NAV MENU ====== */
+
+    .nav-bar {
+        /* border: 1px dashed white; */
+        position: fixed;
+        bottom: 0;
+        top: 90%;
+    }
+
     .nav-text {
         font-size: 10px;
     }
@@ -735,26 +753,22 @@ body {
     .content.home .image-ct {
         /* border: 1px dashed; */
         z-index: -1;
-        order: 1;
     }
 
     .text-ct {
         position: absolute;
         padding: 0 20px;
-        top: 50%;
+        top: 60%;
     }
 
     .logos-ct {
-        /* border: 1px dashed; */
-        padding-bottom: 10px;
-        margin-right: 0;
         width: 100%;
-        height: 100%;
+        margin-right: 0;
         flex-direction: row;
         justify-content: space-around;
-        align-items: flex-end;
         gap: 0;
-        order: 2;
+        position: absolute;
+        top: 10px;
     }
 
     #mouse-icon, 
@@ -765,19 +779,19 @@ body {
     /* ====== home slide animations ====== */
 
     .logos-ct a:nth-child(1) {
-        transform: translateY(60px);
+        transform: translateY(-60px);
     }
 
     .logos-ct a:nth-child(2) {
-        transform: translateY(90px);
+        transform: translateY(-90px);
     }
 
     .logos-ct a:nth-child(3) {
-        transform: translateY(120px);
+        transform: translateY(-120px);
     }
 
     .logos-ct a:nth-child(4) {
-        transform: translateY(150px);
+        transform: translateY(-150px);
     }
 
     /* ====== ABOUT SLIDE ====== */
@@ -884,21 +898,6 @@ body {
     .contact-info-ct {
         column-gap: 0;
     }
-
-    .content.contact h1 {
-        margin: 25px 0 70px 0;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    
-    /* ====== HOME SLIDE ====== */
-
-    .text-ct {
-        top: 45%;
-    }
-
-    /* ====== CONTACT SLIDE ====== */
 
     .content.contact h1 {
         margin: 25px 0 70px 0;
