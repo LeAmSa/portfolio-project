@@ -7,6 +7,7 @@
     --red-color: #8D0B0B;
     --gray-color: #ddd6d6;
     --purple-color: #5a044c;
+    --purple-hover-color: #e46dd0;
     --text-shadow: #ffffff66;
 }
 
@@ -238,7 +239,7 @@ body {
 
 .text-ct h1{
     font-size: 3em;
-    transform: translateY(-60px);
+    transform: translateY(-80px);
     opacity: 0;
     transition: 2s ease;
     transition-property: transform, opacity;
@@ -247,14 +248,15 @@ body {
 .text-ct h3 {
     margin-bottom: 15px;
     font-weight: 200;
-    transform: translateX(100px);
+    transform: translateX(120px);
     opacity: 0;
     transition: 2s ease;
     transition-property: transform, opacity;
 }
 
 .text-ct p {
-    transform: translateY(60px);
+    color: var(--gray-color);
+    transform: translateY(80px);
     opacity: 0;
     transition: 2s ease;
     transition-property: transform, opacity;
@@ -378,6 +380,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
+}
+
+.about-info-ct p {
+    color: var(--gray-color);
 }
 
 .interests-icons-ct {
@@ -674,6 +680,12 @@ body {
     color: var(--gray-color);
 }
 
+.emails-links a {
+    display: block;
+    text-decoration: none;
+    color: var(--gray-color);
+    transition: color .3s ease;
+}
 
 .socials {
     list-style: none;
@@ -682,6 +694,13 @@ body {
 .socials-item a {
     display: flex;
     align-items: center;
+    transition: color .3s ease;
+}
+
+.emails-links a:hover,
+.socials-item a:hover,
+.socials-item a:hover i {
+    color: var(--purple-hover-color);
 }
 
 .socials-item:not(:last-child) {
@@ -691,7 +710,7 @@ body {
 .socials-item i {
     font-size: 1.4em;
     color: var(--gray-color);
-
+    transition: color .3s ease;
 }
 
 .socials-item a {
